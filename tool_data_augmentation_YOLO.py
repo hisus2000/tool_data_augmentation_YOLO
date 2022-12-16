@@ -88,7 +88,7 @@ for transform_name in transform_names_0:
             # save labels
             with open(labels_dir + f'/aug_step1_{transform_name}_' + fn.split(".jp")[0] + '.txt', 'w') as fw:
                 for transformed_bbox in transformed_bboxes:
-                    transformed_ann = f'{int(transformed_bbox[4])} {transformed_bbox[0]} {transformed_bbox[1]} {transformed_bbox[2]} {transformed_bbox[3]}'
+                    transformed_ann = f'{int(transformed_bbox[4])} {transformed_bbox[0]} {transformed_bbox[1]} {transformed_bbox[2]} {transformed_bbox[3]} \n'
                     fw.write(transformed_ann)    
             count += 1
 # STEP 2
@@ -122,7 +122,7 @@ for transform_name in transform_names_1:
             # save labels
             with open(labels_dir + f'/aug_step2_{transform_name}_' + fn.split(".jp")[0] + '.txt', 'w') as fw:
                 for transformed_bbox in transformed_bboxes:
-                    transformed_ann = f'{int(transformed_bbox[4])} {transformed_bbox[0]} {transformed_bbox[1]} {transformed_bbox[2]} {transformed_bbox[3]}'
+                    transformed_ann = f'{int(transformed_bbox[4])} {transformed_bbox[0]} {transformed_bbox[1]} {transformed_bbox[2]} {transformed_bbox[3]} \n'
                     fw.write(transformed_ann)    
             count += 1
 
