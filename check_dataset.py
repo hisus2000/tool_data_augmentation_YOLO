@@ -1,14 +1,14 @@
 import os
 
 # Check number of images
-images_dir = 'images'
+images_dir = './data/images/'
 
 images_train_num = len(os.listdir(os.path.join(images_dir, 'train')))
 images_val_num = len(os.listdir(os.path.join(images_dir, 'val')))
 images_test_num = len(os.listdir(os.path.join(images_dir, 'test')))
 
 # Check number of labels
-labels_dir = 'labels'
+labels_dir = './data/labels/'
 
 labels_train_num = 0
 labels_val_num   = 0
@@ -111,10 +111,10 @@ for fn in os.listdir(os.path.join(labels_dir, 'test')):
         redundant_labels.append(os.path.join(labels_dir, 'test', fn))
 
 # remove
-for fn in redundant_images:
-    os.remove(fn)
-for fn in redundant_labels:
-    os.remove(fn)
+# for fn in redundant_images:
+#     os.remove(fn)
+# for fn in redundant_labels:
+#     os.remove(fn)
 
 # Empty label file
 empty_labels = []
@@ -128,8 +128,8 @@ for fn in os.listdir(os.path.join(labels_dir, 'test')):
     if os.stat(os.path.join(labels_dir, 'test', fn)).st_size == 0:
         empty_labels.append(fn)
 
-for fn in empty_labels:
-    os.remove(os.path.join(labels_dir, 'train', fn))
+# for fn in empty_labels:
+#     os.remove(os.path.join(labels_dir, 'train', fn))
 
 # print results
 print(f'Images: train / val / test / total = {images_train_num} / {images_val_num} / {images_test_num} / {images_train_num + images_test_num + images_val_num}')
